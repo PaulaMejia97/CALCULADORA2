@@ -17,30 +17,30 @@ public class Calculadora2 {
     System.out.println(
         "porfavor digite qué operación quiere hacer (+ SUMA, - RESTA ,* MULTIPLICACIÓN, / DIVISIÓN");
     String operacion = scanner.next();
-    calcularResultado(numero1,numero2,operacion);
+    resultado = calcularResultado(numero1,numero2,operacion);
+    System.out.println("El resultados es "+resultado);
   }
 
-  static void calcularResultado(float numero1, float numero2, String operacion) {
+  static float calcularResultado(float numero1, float numero2, String operacion) {
     float resultado;
     switch (operacion) {
       case "+":
         resultado = numero1 + numero2;
-        System.out.print("El resultado de la suma es =" + resultado);
         break;
       case "-":
         resultado = numero1 - numero2;
-        System.out.println("El resultado de la resta es =" + resultado);
         break;
       case "*":
         resultado = numero1 * numero2;
-        System.out.println("Elresultado de la multiplicadción es=" + resultado);
         break;
       case "/":
         resultado = numero1 / numero2;
-        System.out.println("El resultado de la división es=" + resultado);
         break;
-
+      default:
+        resultado=-10000;
+        break;
     }
+    return resultado;
   }
 
 }
